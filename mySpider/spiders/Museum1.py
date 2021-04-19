@@ -14,13 +14,13 @@ class Museum0(scrapy.Spider):
 
     def parse(self, response, **kwargs):
         item = MuseumBasicInformationItem()
-        item["museumID"] = 1
+        item["museumID"] = 3
         item["museumName"] = response.xpath("/html/body/div[3]/div[2]/div/div[1]/div[7]/dl[1]/dd[1]/text()").extract()
         item["address"] = response.xpath("/html/body/div[3]/div[2]/div/div[1]/div[7]/dl[1]/dd[6]/text()").extract()
         item["openingTime"] = response.xpath("/html/body/div[3]/div[2]/div/div[1]/div[7]/dl[2]/dd[7]/text()").extract()
         item["consultationTelephone"] = "not found"
         item["introduction"] = response.xpath("/html/body/div[3]/div[2]/div/div[1]/div[4]/div[1]/text()").extract()
         item["publicityVideoLink"] = "not found"
-        item["longitude"] = "116.403414"
-        item["latitude"] = "39.924091"
+        item["longitude"] = "666.666666"
+        item["latitude"] = "66.666666"
         yield item
