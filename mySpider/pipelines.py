@@ -5,10 +5,11 @@
 
 
 # useful for handling different item types with a single interface
-from itemadapter import ItemAdapter
 
 import pymysql
 from twisted.enterprise import adbapi
+
+
 # 异步更新操作
 class MuseumPipeLine(object):
     def __init__(self, dbpool):
@@ -22,11 +23,11 @@ class MuseumPipeLine(object):
         :return: 实例化参数
         """
         adbparams = dict(
-            host = settings['MYSQL_HOST'],
-            db = settings['MYSQL_DBNAME'],
-            user = settings['MYSQL_USER'],
-            password = settings['MYSQL_PASSWORD'],
-            cursorclass = pymysql.cursors.DictCursor  # 指定cursor类型
+            host=settings['MYSQL_HOST'],
+            db=settings['MYSQL_DBNAME'],
+            user=settings['MYSQL_USER'],
+            password=settings['MYSQL_PASSWORD'],
+            cursorclass=pymysql.cursors.DictCursor  # 指定cursor类型
         )
 
         # 连接数据池ConnectionPool，使用pymysql或者Mysqldb连接
@@ -58,6 +59,7 @@ class MuseumPipeLine(object):
         if failure:
             # 打印错误信息
             print(failure)
+
 
 class CollectionPipeLine(object):
     def __init__(self, dbpool):
@@ -131,4 +133,3 @@ class ExhibitionPipeLine(object):
     def handle_error(self, failure):
         if failure:
             print(failure)
-

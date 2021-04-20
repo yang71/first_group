@@ -24,9 +24,12 @@ class Museum5(scrapy.Spider):
         item["museumID"] = 5
         item["museumName"] = "北京鲁迅博物馆"
         item["address"] = response.xpath("/html/body/div[3]/div[5]/div[1]/p[4]/text()").extract_first()
-        item["openingTime"] = response.xpath(
-            "/html/body/div[3]/div[5]/div[1]").xpath('string(.)').extract_first().replace("\t", '').replace("\n",
-                                                                                                            '').strip()
+        item["openingTime"] = response.xpath("/html/body/div[3]/div[5]/div[1]/p[1]").xpath(
+            'string(.)').extract_first().replace("\t", '').replace("\n", '').strip() + " " + response.xpath(
+            "/html/body/div[3]/div[5]/div[1]/p[2]").xpath('string(.)').extract_first().replace("\t", '').replace("\n",
+                                                                                                                 '').strip() + " " + response.xpath(
+            "/html/body/div[3]/div[5]/div[1]/p[3]").xpath(
+            'string(.)').extract_first().replace("\t", '').replace("\n", '').strip()
         item["consultationTelephone"] = str(((response.xpath(
             "/html/body/div[3]/div[5]/div[3]/p[3]/span[1]/text()").extract_first()).replace("\xa0", '')).strip())
         item["publicityVideoLink"] = None
