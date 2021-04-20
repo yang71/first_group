@@ -35,5 +35,6 @@ class Museum11(scrapy.Spider):
         item["latitude"] = "39.947016"
         item["introduction"] = str(response.xpath("/html/body/div[3]/div[2]/div/div[1]/div[11]").xpath(
             "string(.)").extract_first()).split("\n")[0]
+
         print(item)
         yield item

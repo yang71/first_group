@@ -38,5 +38,6 @@ class Museum14(scrapy.Spider):
     def parseAnotherPage(self, response):
         item = response.meta["item"]
         item["introduction"] = str(response.xpath("//*[@id='divContent']/p[1]/text()").extract_first()).strip(' ')
+
         print(item)
         yield item
