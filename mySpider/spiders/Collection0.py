@@ -1,4 +1,4 @@
-from ..items import *
+import scrapy
 
 
 class Collection0(scrapy.Spider):
