@@ -4,8 +4,7 @@
 # @Author  : ana
 # @File    : Museum1.py
 # @Software: PyCharm
-
-from ..items import *
+import scrapy
 
 
 class Museum1(scrapy.Spider):
