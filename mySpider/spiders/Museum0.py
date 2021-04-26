@@ -5,7 +5,7 @@
 # @File    : Museum0.py
 # @Software: PyCharm
 
-import scrapy
+from ..items import *
 
 
 class Museum0(scrapy.Spider):
