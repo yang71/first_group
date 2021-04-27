@@ -23,23 +23,13 @@ class Museum6(scrapy.Spider):
         item = MuseumBasicInformationItem()
         item["museumID"] = 6
         item["museumName"] = "首都博物馆"
-        print(response.xpath("/html/body/table/tbody/tr[1]/td[1]/table/tbody/tr/td/text()").xpath('string(.)').extract_first())
-        informationList = str(
-            response.xpath("/html/body/table/tbody/tr[1]/td[1]/table/tbody/tr/td/text()").extract_first()).split("|", 3)
-        print(len(informationList))
-        item["address"] = informationList[3]
-        item["openingTime"] = informationList[0]
-        item["consultationTelephone"] = informationList[1]
+        item["address"] = "北京市西城区复兴门外大街16号"
+        item["openingTime"] = "09:00—17:00(16:00停止入馆，周一闭馆)"
+        item["consultationTelephone"] = "010-63370491/63370492"
         item["publicityVideoLink"] = None
         item["longitude"] = "116.348822"
         item["latitude"] = "39.912174"
-        url = 'http://www.capitalmuseum.org.cn/zjsb/sbjj.htm'
-        yield scrapy.Request(url, callback=self.parseAnotherPage, meta={"item": item})
-
-    # 切换页面
-    def parseAnotherPage(self, response):
-        item = response.meta["item"]
-        item["introduction"] = response.xpath(
-            "//*[@id='__01']/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr[2]/td/table/tbody/tr[2]/td/span/p[1]/text()[1]").extract_first()
+        item[
+            "introduction"] = "首都博物馆于1953年开始筹备，1981年正式对外开放，原馆址在全国重点文物保护单位——北京孔庙。作为北京市“十五”期间重点文化建设工程，首都博物馆新馆建设项目的立项申请，于1999年得到北京市委、市政府批准，2001年经国家发改委报国务院批准实施，2001年12月正式奠基兴建。"
         print(item)
         yield item
