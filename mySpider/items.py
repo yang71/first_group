@@ -7,6 +7,7 @@ import scrapy
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import TakeFirst
 
+
 class MuseumBasicInformationItem(scrapy.Item):
     museumID = scrapy.Field()
     museumName = scrapy.Field()
