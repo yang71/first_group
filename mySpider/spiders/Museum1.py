@@ -28,7 +28,7 @@ class Museum1(scrapy.Spider):
             "/html/body/div[6]/div[1]/div[2]/div/p[1]/span[2]/em/text()").extract_first()
         item["consultationTelephone"] = str(((response.xpath(
             "/html/body/div[8]/div/div[1]/p/text()[4]").extract_first()).replace("\xa0", '')).strip())
-        item["publicityVideoLink"] = None
+        item["publicityVideoLink"] = "http://mas.cdstm.cn/masvod/public/2019/08/05/20190805_16c607f6ea2_r1_1200k.mp4"
         item["longitude"] = "116.40504"
         item["latitude"] = "40.012384"
         url = 'https://cstm.cdstm.cn/bgs/kjghk/'
