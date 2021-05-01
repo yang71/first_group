@@ -28,7 +28,7 @@ class Museum14(scrapy.Spider):
             "/html/body/div[8]/div[2]/div[1]/a/p[1]/text()").extract_first()
         item["consultationTelephone"] = str(((response.xpath(
             "/html/body/div[11]/div/div[1]/p[3]/text()[2]").extract_first()).replace("\xa0", '')).strip())
-        item["publicityVideoLink"] = None
+        item["publicityVideoLink"] = "http://www.cnfm.org.cn/olvideos/20210429_ysxfb16.mp4"
         item["longitude"] = "116.356228"
         item["latitude"] = "39.939043"
         url = 'http://www.printingmuseum.cn/News/Details/BGJS#comehere'
