@@ -7,12 +7,13 @@
 
 from ..items import *
 from ..str_filter import *
+from ..auxiliary_files import Collection11_supporting
 
 
 class Collection11(scrapy.Spider):
     name = "Collection11"
     allowed_domains = ['bjp.org.cn']
-    start_urls = ['http://www.bjp.org.cn/kxyj/zpzs/szl/list.shtml']
+    start_urls = Collection11_supporting.Collection11Supporting.startUrl
 
     custom_settings = {
         'ITEM_PIPELINES': {
