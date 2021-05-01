@@ -27,7 +27,7 @@ class Museum15(scrapy.Spider):
         item["openingTime"] = str(response.xpath(
             "//*[@id='scroll_begin']/a//text()").extract_first()).replace(" ", "").split("\n")[1].replace("\r", "")
         item["consultationTelephone"] = "010-64319548"
-        item["publicityVideoLink"] = None
+        item["publicityVideoLink"] = "http://www.cnfm.org.cn/olvideos/20210429_ysxfb16.mp4"
         item["longitude"] = "116.422139"
         item["latitude"] = "40.063913"
         url = 'http://www.cnfm.org.cn/ybxxjs/ybjj.shtml'
