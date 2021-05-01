@@ -13,6 +13,8 @@ LOG_LEVEL = "WARNING"
 SPIDER_MODULES = ['mySpider.spiders']
 NEWSPIDER_MODULE = 'mySpider.spiders'
 
+COMMANDS_MODULE = 'mySpider.commands'
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = 'mySpider (+http://www.yourdomain.com)'
 
