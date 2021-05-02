@@ -5,9 +5,6 @@
 # @File    : Collection23_supporting.py
 # @Software: PyCharm
 
-from ..items import *
-from ..str_filter import *
-
 
 class Collection23Supporting:
     startUrl = ['http://www.xbpjng.cn/wenbotiandi/shuhua.aspx',
