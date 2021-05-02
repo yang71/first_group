@@ -104,6 +104,22 @@ class TestspiderDownloaderMiddleware:
         spider.logger.info('Spider opened: %s' % spider.name)
 
 
+class Museum0Middleware(object):
+
+    def process_request(self, request, spider):
+        pass
+
+    def process_response(self, request, response, spider):
+        if "dpm.org.cn" in request.url:
+            spider.browser.get(url=request.url)
+            js = "window.scrollTo(0,document.body.scrollHeight)"
+            spider.browser.execute_script(js)
+            row_response = spider.browser.page_source
+            return HtmlResponse(url=spider.browser.current_url, body=row_response, encoding="utf8", request=request)
+        else:
+            return response
+
+
 class Collection0Middleware(object):
 
     def process_request(self, request, spider):
