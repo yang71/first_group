@@ -27,8 +27,6 @@ class Collection45(scrapy.Spider):
             item = CollectionItem()
             item["museumID"] = 45
             item["museumName"] = "爱辉历史陈列馆"
-            item['collectionName'] = StrFilter.filter(
-                li.xpath("./a/div[2]/text()").extract_first()).replace('[', '').replace(']', '')
             item['collectionImageLink'] = 'http://www.aihuihistorymuseum.org.cn/' + str(li.xpath(
                 "./a/div[1]/img/@src").extract_first())
             url = "http://www.aihuihistorymuseum.org.cn/" + str(li.xpath("./a/@href").extract_first())
@@ -40,6 +38,9 @@ class Collection45(scrapy.Spider):
 
     def parseAnotherPage(self, response):
         item = response.meta["item"]
+        item['collectionName'] = StrFilter.filter(
+            response.xpath("//*[@id='ContentPlaceHolder1_title']/text()").extract_first()).replace('[', '').replace(']',
+                                                                                                                    '')
         item['collectionIntroduction'] = StrFilter.filter(
             response.xpath("//*[@id='form1']/div[4]/div[1]/div/div[2]/div[2]/div[3]").xpath(
                 'string(.)').extract_first()).replace('[', '').replace(
