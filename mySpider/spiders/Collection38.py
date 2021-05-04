@@ -20,7 +20,6 @@ class Collection38(scrapy.Spider):
             'mySpider.pipelines.CollectionPipeLine': 301,
         }
     }
-
     def parse(self, response, **kwargs):
         li_list = response.xpath("/html/body/div[6]/ul/li")
         print(len(li_list))
