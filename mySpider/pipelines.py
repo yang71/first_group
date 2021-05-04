@@ -86,6 +86,9 @@ class CollectionPipeLine(object):
             query.addCallback(self.handle_error)  # 处理异常
 
     def do_insert(self, cursor, item):
+        tt = cursor._connection._connection
+        tt.ping(reconnect=True)
+
         insert_sql = """replace into Collection(collectionName,collectionImageLink,collectionIntroduction,museumID,
         museumName) VALUES (%s,%s,%s,%s,%s) """
 
@@ -123,6 +126,9 @@ class ExhibitionPipeLine(object):
             query.addCallback(self.handle_error)  # 处理异常
 
     def do_insert(self, cursor, item):
+        tt = cursor._connection._connection
+        tt.ping(reconnect=True)
+
         insert_sql = """replace into Exhibition(exhibitionName,exhibitionImageLink,exhibitionIntroduction,
         exhibitionTime,museumID, museumName) VALUES (%s,%s,%s,%s,%s,%s) """
 

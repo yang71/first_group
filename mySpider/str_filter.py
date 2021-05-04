@@ -20,7 +20,11 @@ class StrFilter:
         res3 = res2.replace(" ", "")
         return res3
 
-    #获取域名，用于相对url拼接为完整url
+    @staticmethod
+    def filter_2(src):
+        return StrFilter.filter(src).replace('[', '').replace(']', '')
+
+    # 获取域名，用于相对url拼接为完整url
     @staticmethod
     def getDoamin(response):
         parsed_uri = urlparse(response.url)

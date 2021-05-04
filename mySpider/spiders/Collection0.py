@@ -4,7 +4,11 @@
 # @Author  : ana
 # @File    : Collection0.py
 # @Software: PyCharm
+import logging
+import time
+
 from selenium import webdriver
+from selenium.common.exceptions import JavascriptException
 from selenium.webdriver.chrome.options import Options
 
 # from ..auxiliary_files import Collection0_supporting
@@ -95,16 +99,25 @@ class Collection0(scrapy.Spider):
         item = response.meta["item"]
         item['collectionName'] = response.xpath(
             "/html/body/div[1]/div/div[2]/div/div[1]/div[2]/div/h2/text()").extract_first()
-        imgs = response.xpath("//img/@src").extract()
-        print(imgs)
         item['collectionImageLink'] = None
-        for i in imgs:
-            if "shuziwenwu" in i:
-                item['collectionImageLink'] = i
-                break
+        iframe_id = response.xpath('//*[@id="image_iframe_id"]/@id').extract_first()
+
+        try:
+            item['collectionImageLink'] = self.browser.execute_script(
+                'var images = document.getElementById("' + iframe_id
+                + '").contentWindow.document.getElementsByTagName("img");'
+                  'var imgURLs=new Array(images.length);'
+                  'for(var i = 0;i<images.length;i++){ imgURLs[i] = images[i].src;}'
+                  'return imgURLs;')[0]
+
+        except JavascriptException as e:
+            time.sleep(1)
+
         item['collectionIntroduction'] = StrFilter.filter(
             response.xpath("/html/body/div[1]/div").xpath(
                 'string(.)').extract_first()).replace('[', '').replace(']', '').split('文字信息')[-1].split('相关信息')[
-            0].replace("返回上页','故宫博物院版权所有，查看详情。", '').replace("'收','藏','相关推荐','分享'", '').replace("'相关推荐','分享'", '')
+            0].replace("返回上页','故宫博物院版权所有，查看详情。", '').replace("'收','藏','相关推荐','分享'", '').replace("'相关推荐','分享'",
+                                                                                                '').replace(
+            "微信扫一扫：分享微信里点“发现”，扫一下二维码便可将本文分享至朋友圈。", "").replace("收藏", "")
         print(item)
         yield item
