@@ -253,7 +253,7 @@ class Collection190Middleware(object):
         pass
 
     def process_response(self, request, response, spider):
-        if "shanghaimuseum.net" in request.url:
+        if "xabwy.com" in request.url:
             spider.browser.get(url=request.url)
             js = "window.scrollTo(0,document.body.scrollHeight)"
             spider.browser.execute_script(js)
@@ -269,6 +269,66 @@ class Collection183Middleware(object):
 
     def process_response(self, request, response, spider):
         if "tibetmuseum.com.cn" in request.url:
+            spider.browser.get(url=request.url)
+            js = "window.scrollTo(0,document.body.scrollHeight)"
+            spider.browser.execute_script(js)
+            row_response = spider.browser.page_source
+            return HtmlResponse(url=spider.browser.current_url, body=row_response, encoding="utf8", request=request)
+        else:
+            return response
+
+class Collection172Middleware(object):
+
+    def process_request(self, request, spider):
+        pass
+
+    def process_response(self, request, response, spider):
+        if "zunyihy.cn" in request.url:
+            spider.browser.get(url=request.url)
+            js = "window.scrollTo(0,document.body.scrollHeight)"
+            spider.browser.execute_script(js)
+            row_response = spider.browser.page_source
+            return HtmlResponse(url=spider.browser.current_url, body=row_response, encoding="utf8", request=request)
+        else:
+            return response
+
+class Collection164Middleware(object):
+
+    def process_request(self, request, spider):
+        pass
+
+    def process_response(self, request, response, spider):
+        if "cddfct.com" in request.url:
+            spider.browser.get(url=request.url)
+            js = "window.scrollTo(0,document.body.scrollHeight)"
+            spider.browser.execute_script(js)
+            row_response = spider.browser.page_source
+            return HtmlResponse(url=spider.browser.current_url, body=row_response, encoding="utf8", request=request)
+        else:
+            return response
+
+class Collection153Middleware(object):
+
+    def process_request(self, request, spider):
+        pass
+
+    def process_response(self, request, response, spider):
+        if "ypzz.cn" in request.url:
+            spider.browser.get(url=request.url)
+            js = "window.scrollTo(0,document.body.scrollHeight)"
+            spider.browser.execute_script(js)
+            row_response = spider.browser.page_source
+            return HtmlResponse(url=spider.browser.current_url, body=row_response, encoding="utf8", request=request)
+        else:
+            return response
+
+class Collection150Middleware(object):
+
+    def process_request(self, request, spider):
+        pass
+
+    def process_response(self, request, response, spider):
+        if "gzchenjiaci.com" in request.url:
             spider.browser.get(url=request.url)
             js = "window.scrollTo(0,document.body.scrollHeight)"
             spider.browser.execute_script(js)

@@ -7,6 +7,7 @@
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+import time
 
 from ..items import *
 from ..str_filter import *
@@ -16,7 +17,7 @@ chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-gpu")
 
-#爬不出来，待更新
+
 class Collection190(scrapy.Spider):
     name = "Collection190"
     allowed_domains = ['xabwy.com']
@@ -51,5 +52,4 @@ class Collection190(scrapy.Spider):
             item['collectionIntroduction'] = StrFilter.filter(
                 li.xpath("./div/div[1]").xpath('string(.)').extract_first())
             print(item)
-
-            # yield(item)
+            yield(item)

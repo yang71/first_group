@@ -17,7 +17,7 @@ chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-gpu")
 
-#无法爬取，待更新
+
 class Collection183(scrapy.Spider):
     name = "Collection183"
     allowed_domains = ['tibetmuseum.com.cn']
@@ -50,4 +50,4 @@ class Collection183(scrapy.Spider):
         item['collectionIntroduction'] = StrFilter.filter(
             response.xpath("//*[@id='app']/div/div[2]/div/div[3]/div/p[3]/p[1]").xpath('string(.)').extract_first())
         print(item)
-        #yield(item)
+        yield(item)

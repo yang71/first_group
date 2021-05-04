@@ -6,8 +6,6 @@
 # @Software: PyCharm
 
 class Collection171Supporting:
-    startUrl = ['***',
-                '***',
-                '***',
-                '***',
-                '***', ]
+    startUrl = ['http://www.zhudeguli.com/article/tour_collection/?page=1',
+                'http://www.zhudeguli.com/article/tour_collection/?page=2',
+                'http://www.zhudeguli.com/article/tour_collection/?page=3']

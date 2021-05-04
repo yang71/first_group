@@ -5,11 +5,16 @@
 # @File    : Collection172.py
 # @Software: PyCharm
 
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
 from ..items import *
 from ..str_filter import *
 from ..auxiliary_files import Collection172_supporting
 
+chrome_options = Options()
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-gpu")
 
 class Collection172(scrapy.Spider):
     name = "Collection172"
@@ -19,8 +24,19 @@ class Collection172(scrapy.Spider):
     custom_settings = {
         'ITEM_PIPELINES': {
             'mySpider.pipelines.CollectionPipeLine': 301,
+        },
+        'DOWNLOADER_MIDDLEWARES': {
+            'mySpider.middlewares.Collection172Middleware': 9672,
         }
     }
+
+    def __init__(self):
+        self.browser = webdriver.Chrome(chrome_options=chrome_options)
+        super().__init__()
+
+    def close(self, spider, reason):
+        self.browser.quit()
+
     def parse(self, response, **kwargs):
         li_list = response.xpath("//*[@id='list_wenchuang']/div")
         print(len(li_list))
@@ -43,6 +59,6 @@ class Collection172(scrapy.Spider):
     def parseAnotherPage(self, response):
         item = response.meta["item"]
         item['collectionIntroduction'] = StrFilter.filter(
-            response.xpath("/html/body/div[4]/div[3]/div/div[3]").xpath('string(.)').extract_first())
+            response.xpath("//div[@class='situation_1']").xpath('string(.)').extract_first())
         print(item)
-        #yield(item)
+        yield(item)

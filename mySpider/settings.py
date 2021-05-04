@@ -62,6 +62,10 @@ DOWNLOADER_MIDDLEWARES = {
     'mySpider.middlewares.Collection33Middleware': 9532,
     'mySpider.middlewares.Collection42Middleware': 9533,
     'mySpider.middlewares.Collection49Middleware': 9534,
+    'mySpider.middlewares.Collection150Middleware': 9650,
+    'mySpider.middlewares.Collection153Middleware': 9653,
+    'mySpider.middlewares.Collection164Middleware': 9664,
+    'mySpider.middlewares.Collection172Middleware': 9672,
     'mySpider.middlewares.Collection183Middleware': 9683,
     'mySpider.middlewares.Collection190Middleware': 9690,
 }
