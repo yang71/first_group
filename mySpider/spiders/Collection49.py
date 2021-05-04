@@ -14,7 +14,6 @@ chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-gpu")
 
-
 # 要多次才能成功
 class Collection49(scrapy.Spider):
     name = "Collection49"

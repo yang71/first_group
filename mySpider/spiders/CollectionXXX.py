@@ -29,7 +29,7 @@ class CollectionXXX(scrapy.Spider):
             item["museumName"] = ""
             item['collectionName'] = StrFilter.filter(
                 li.xpath("").xpath('string(.)').extract_first())
-            item['collectionImageLink'] = str(
+            item['collectionImageLink'] = StrFilter.getDoamin(response) + str(
                 li.xpath("").extract_first())
             url = StrFilter.getDoamin(response) + str(
                 li.xpath("").extract_first())
