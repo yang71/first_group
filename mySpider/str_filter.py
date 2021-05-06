@@ -13,6 +13,9 @@ class StrFilter:
     # 过滤\n,\r,\t,[xxxx]
     r1 = re.compile(u"\\n|\\r|\\[.*?]|\\t")
 
+    # 过滤中文
+    r2 = re.compile(r"[\u4e00-\u9fa5]|\\(.*?)|（.*?）")
+
     @staticmethod
     def filter(src):
         res1 = re.sub(StrFilter.r1, "", str(src))
@@ -30,3 +33,11 @@ class StrFilter:
         parsed_uri = urlparse(response.url)
         domain = '{uri.scheme}://{uri.netloc}'.format(uri=parsed_uri)
         return domain
+
+    # Museum表consultationTelephone
+    @staticmethod
+    def filter_Telephone(src):
+        res = re.sub(StrFilter.r2, "", str(src)).replace('：', '').replace(' ', '')
+        if res[0] == ':':
+            return res[1:]
+        return res
