@@ -34,4 +34,4 @@ class Collection152(scrapy.Spider):
                 li.xpath("./a/img/@src").extract_first())
             item['collectionIntroduction'] = "暂无"
             print(item)
-            #yield(item)
+            yield(item)

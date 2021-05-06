@@ -45,4 +45,4 @@ class Collection165(scrapy.Spider):
         item['collectionIntroduction'] = StrFilter.filter(
             response.xpath("//*[@id='MyContent']").xpath('string(.)').extract_first())
         print(item)
-        #yield(item)
+        yield(item)

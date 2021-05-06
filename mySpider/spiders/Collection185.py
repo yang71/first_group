@@ -36,4 +36,4 @@ class Collection185(scrapy.Spider):
                 li.xpath("./div[1]/p[2]").xpath(
                     'string(.)').extract_first())
             print(item)
-            # yield(item)
+            yield(item)

@@ -35,4 +35,4 @@ class Collection181(scrapy.Spider):
             item['collectionIntroduction'] = StrFilter.filter(
                 li.xpath("./td[2]").xpath('string(.)').extract_first())
             print(item)
-            #yield(item)
+            yield(item)
