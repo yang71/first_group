@@ -47,7 +47,7 @@ class Museum0(scrapy.Spider):
         stopEntryTime = response.xpath(
             "//*[@id='container']/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div/div[3]/h1/text()").extract_first()
         closeTime = response.xpath(
-            "//*[@id='container']/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div/div[4]/h1").extract_first()
+            "//*[@id='container']/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div/div[4]/h1/text()").extract_first()
         item[
             "openingTime"] = "开放进馆时间：" + str(entryTime) + " 止票时间：" + str(ticketClosingTime) + " 停止入馆时间：" + str(
             stopEntryTime) + " 闭馆时间：" + str(closeTime)
