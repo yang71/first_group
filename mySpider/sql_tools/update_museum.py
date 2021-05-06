@@ -62,12 +62,12 @@ def updateAll(sql):
             videoLink = None
         # print(videoLink)
 
-        # replace_sql = """replace into museumbasicinformation(museumID,museumName,openingTime,address,
-        # consultationTelephone,introduction,longitude,latitude,publicityVideoLink) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,
-        # %s) """
-        #
-        # cur.execute(replace_sql, (str(row[0]), str(row[1]), openingTime, address, conTelephone, introduction,
-        #                           str(row[6]), str(row[7]), videoLink))
+        replace_sql = """replace into museumbasicinformation(museumID,museumName,openingTime,address,
+        consultationTelephone,introduction,longitude,latitude,publicityVideoLink) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,
+        %s) """
+
+        cur.execute(replace_sql, (str(row[0]), str(row[1]), openingTime, address, conTelephone, introduction,
+                                  str(row[6]), str(row[7]), videoLink))
 
     conn.commit()
     cur.close()
