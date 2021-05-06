@@ -45,4 +45,4 @@ class Collection193(scrapy.Spider):
         item['collectionIntroduction'] = StrFilter.filter(
             response.xpath("/html/body/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div[3]").xpath('string(.)').extract_first())
         print(item)
-        #yield(item)
+        yield(item)
