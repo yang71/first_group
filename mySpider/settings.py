@@ -53,6 +53,7 @@ COOKIES_ENABLED = True
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
+    'mySpider.middlewares.DefaultMiddleware': 0,
     'mySpider.middlewares.Museum0Middleware': 407,
     'mySpider.middlewares.Collection0Middleware': 9527,
     'mySpider.middlewares.Collection8Middleware': 9528,

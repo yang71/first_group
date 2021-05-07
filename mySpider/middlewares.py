@@ -104,6 +104,15 @@ class TestspiderDownloaderMiddleware:
         spider.logger.info('Spider opened: %s' % spider.name)
 
 
+class DefaultMiddleware(object):
+
+    def process_request(self, request, spider):
+        pass
+
+    def process_response(self, request, response, spider):
+        return response
+
+
 class Museum0Middleware(object):
 
     def process_request(self, request, spider):
