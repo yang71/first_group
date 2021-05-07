@@ -1,5 +1,6 @@
 from scrapy.commands import ScrapyCommand
 
+
 class Command(ScrapyCommand):
     requires_project = True
 
@@ -11,7 +12,7 @@ class Command(ScrapyCommand):
 
     def run(self, args, opts):
         spider_list = self.crawler_process.spiders.list()
-        for name in spider_list:            #遍历所有爬虫
-            self.crawler_process.crawl(name, **opts.__dict__)       #运行爬虫
+        for name in spider_list:  # 遍历所有爬虫
+            self.crawler_process.crawl(name, **opts.__dict__)  # 运行爬虫
 
-        self.crawler_process.start()        #启动进程
+        self.crawler_process.start()  # 启动进程

@@ -247,6 +247,7 @@ class Collection49Middleware(object):
         else:
             return response
 
+
 class Collection56Middleware(object):
 
     def process_request(self, request, spider):
@@ -261,6 +262,7 @@ class Collection56Middleware(object):
             return HtmlResponse(url=spider.browser.current_url, body=row_response, encoding="utf8", request=request)
         else:
             return response
+
 
 class Collection61Middleware(object):
 
@@ -277,6 +279,7 @@ class Collection61Middleware(object):
         else:
             return response
 
+
 class Collection67Middleware(object):
 
     def process_request(self, request, spider):
@@ -292,6 +295,7 @@ class Collection67Middleware(object):
         else:
             return response
 
+
 class Collection69Middleware(object):
 
     def process_request(self, request, spider):
@@ -306,6 +310,7 @@ class Collection69Middleware(object):
             return HtmlResponse(url=spider.browser.current_url, body=row_response, encoding="utf8", request=request)
         else:
             return response
+
 
 class Collection70Middleware(object):
 
@@ -338,6 +343,7 @@ class Collection76Middleware(object):
         else:
             return response
 
+
 class Collection77Middleware(object):
 
     def process_request(self, request, spider):
@@ -352,6 +358,7 @@ class Collection77Middleware(object):
             return HtmlResponse(url=spider.browser.current_url, body=row_response, encoding="utf8", request=request)
         else:
             return response
+
 
 class Collection78Middleware(object):
 
@@ -368,6 +375,7 @@ class Collection78Middleware(object):
         else:
             return response
 
+
 class Collection81Middleware(object):
 
     def process_request(self, request, spider):
@@ -382,6 +390,7 @@ class Collection81Middleware(object):
             return HtmlResponse(url=spider.browser.current_url, body=row_response, encoding="utf8", request=request)
         else:
             return response
+
 
 class Collection92Middleware(object):
 
@@ -398,6 +407,7 @@ class Collection92Middleware(object):
         else:
             return response
 
+
 class Collection94Middleware(object):
 
     def process_request(self, request, spider):
@@ -412,6 +422,7 @@ class Collection94Middleware(object):
             return HtmlResponse(url=spider.browser.current_url, body=row_response, encoding="utf8", request=request)
         else:
             return response
+
 
 class Collection95Middleware(object):
 
@@ -428,6 +439,7 @@ class Collection95Middleware(object):
         else:
             return response
 
+
 class Collection97Middleware(object):
 
     def process_request(self, request, spider):
@@ -442,6 +454,7 @@ class Collection97Middleware(object):
             return HtmlResponse(url=spider.browser.current_url, body=row_response, encoding="utf8", request=request)
         else:
             return response
+
 
 class Collection98Middleware(object):
 
@@ -458,6 +471,7 @@ class Collection98Middleware(object):
         else:
             return response
 
+
 class Collection190Middleware(object):
 
     def process_request(self, request, spider):
@@ -472,6 +486,7 @@ class Collection190Middleware(object):
             return HtmlResponse(url=spider.browser.current_url, body=row_response, encoding="utf8", request=request)
         else:
             return response
+
 
 class Collection183Middleware(object):
 
@@ -488,6 +503,7 @@ class Collection183Middleware(object):
         else:
             return response
 
+
 class Collection172Middleware(object):
 
     def process_request(self, request, spider):
@@ -502,6 +518,7 @@ class Collection172Middleware(object):
             return HtmlResponse(url=spider.browser.current_url, body=row_response, encoding="utf8", request=request)
         else:
             return response
+
 
 class Collection164Middleware(object):
 
@@ -518,6 +535,7 @@ class Collection164Middleware(object):
         else:
             return response
 
+
 class Collection153Middleware(object):
 
     def process_request(self, request, spider):
@@ -532,6 +550,7 @@ class Collection153Middleware(object):
             return HtmlResponse(url=spider.browser.current_url, body=row_response, encoding="utf8", request=request)
         else:
             return response
+
 
 class Collection150Middleware(object):
 

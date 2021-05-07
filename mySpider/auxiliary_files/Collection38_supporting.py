@@ -5,9 +5,6 @@
 # @File    : Collection38_supporting.py
 # @Software: PyCharm
 
-from ..items import *
-from ..str_filter import *
-
 
 class Collection38Supporting:
     startUrl = ['https://www.dlmodernmuseum.com/collection/1.html',
