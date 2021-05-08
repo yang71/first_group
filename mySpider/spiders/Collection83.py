@@ -13,7 +13,10 @@ class Collection83(scrapy.Spider):
     custom_settings = {
         'ITEM_PIPELINES': {
             'mySpider.pipelines.CollectionPipeLine': 301,
-        }
+        },
+        'DOWNLOADER_MIDDLEWARES': {
+            'mySpider.middlewares.DefaultMiddleware': 0,
+        },
     }
 
     def parse(self, response, **kwargs):
@@ -25,7 +28,7 @@ class Collection83(scrapy.Spider):
             item["museumName"] = "安徽中国徽州文化博物馆"
 
 
-            item['collectionName'] = None
+            item['collectionName'] = "中国徽州文化博物馆藏品"
 
             # 注意是否为全路径，一般后缀为@src有的是@oldsrc
             #/html/body/div[6]/div[2]/ul/li[1]/a/img
@@ -34,6 +37,6 @@ class Collection83(scrapy.Spider):
 
 
 
-            item["collectionIntroduction"] = None
+            item["collectionIntroduction"] = "中国徽州文化博物馆藏品"
             print(item)
             yield item
