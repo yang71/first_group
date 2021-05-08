@@ -83,6 +83,11 @@ DOWNLOADER_MIDDLEWARES = {
     'mySpider.middlewares.Collection95Middleware': 2344,
     'mySpider.middlewares.Collection97Middleware': 2345,
     'mySpider.middlewares.Collection98Middleware': 2345,
+    'mySpider.middlewares.Exhibition0Middleware': 65535,
+    'mySpider.middlewares.Exhibition8Middleware': 65536,
+    'mySpider.middlewares.Exhibition11Middleware': 65537,
+    'mySpider.middlewares.Exhibition23Middleware': 65538,
+    'mySpider.middlewares.Exhibition24Middleware': 65539,
 }
 
 # Enable or disable extensions
