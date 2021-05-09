@@ -38,6 +38,6 @@ class StrFilter:
     @staticmethod
     def filter_Telephone(src):
         res = re.sub(StrFilter.r2, "", str(src)).replace('：', '').replace(' ', '')
-        if res[0] == ':':
+        if len(res[0]) >= 1 and res[0] == ':':
             return res[1:]
         return res

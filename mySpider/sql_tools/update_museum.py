@@ -38,25 +38,25 @@ def updateAll(sql):
         # 修改openingTime
         openingTime = StrFilter.filter_2(row[2])
         if len(openingTime) <= 4:
-            openingTime = None
-        # print(openingTime)
+            openingTime = ""
+        print(openingTime)
 
         # 修改address
         address = StrFilter.filter_2(row[3]).replace("地址：", "")
         if len(address) <= 4:
-            address = None
+            address = ""
         # print(address)
 
         # 修改consultationTelephone
         conTelephone = StrFilter.filter_Telephone(row[4])
         if len(conTelephone) <= 4:
-            conTelephone = None
+            conTelephone = ""
         # print(conTelephone)
 
         # 修改introduction
         introduction = StrFilter.filter_2(row[5])
         if len(introduction) <= 4:
-            introduction = None
+            introduction = "暂无简介"
         # print(introduction)
 
         # 修改videoLink
