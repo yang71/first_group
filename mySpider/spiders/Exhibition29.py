@@ -28,7 +28,7 @@ class Exhibition29(scrapy.Spider):
     def parse(self, response, **kwargs):
         item = ExhibitionItem()
         item["museumID"] = 29
-        item["museumName"] = "故宫博物院"
+        item["museumName"] = "山西地质博物馆"
         item["exhibitionImageLink"] = StrFilter.getDoamin(response) + str(response.xpath(
             "//div[@class='center_right']//img/@src").extract_first())
         item["exhibitionName"] = StrFilter.filter_2(

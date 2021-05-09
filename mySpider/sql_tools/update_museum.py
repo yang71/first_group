@@ -58,7 +58,7 @@ def updateAll(sql):
 
         # 修改videoLink
         videoLink = str(row[8])
-        if len(videoLink) <= 4:
+        if len(videoLink) <= 4 or 'None' in videoLink:
             videoLink = None
         # print(videoLink)
 

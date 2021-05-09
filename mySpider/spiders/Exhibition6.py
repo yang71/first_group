@@ -31,7 +31,7 @@ class Exhibition6(scrapy.Spider):
             item = ExhibitionItem()
             item["museumID"] = 6
             item["museumName"] = "首都博物馆"
-            item["exhibitionImageLink"] = StrFilter.getDoamin(response) + 'zlxx/' + li.xpath(
+            item["exhibitionImageLink"] = StrFilter.getDoamin(response) + '/zlxx/' + li.xpath(
                 ".//tr[2]/td[1]/img/@src").extract_first()
             item["exhibitionName"] = StrFilter.filter_2(
                 li.xpath(".//tr[2]/td[3]/table[1]//tr[1]//td/text()").extract_first())
