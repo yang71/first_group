@@ -11,11 +11,14 @@ chrome_options.add_argument("--disable-gpu")
 class Collection81(scrapy.Spider):
     name = "Collection81"
     allowed_domains = ['zsbwg.com']
-    start_urls = ['http://www.zsbwg.com/#/cangpinjiansuo/cangpinjiansuo2/:id?orderId=1&bool=true&sort=8a7aef0958b37e280158b38d781e0033&symbol=1']
+    start_urls = ['http://www.zsbwg.com/#/cangpinjiansuo/cangpinjiansuo2/:id?orderId=1&sort=8a7aef0958b37e280158b38d781e0033']
 
     custom_settings = {
         'ITEM_PIPELINES': {
             'mySpider.pipelines.CollectionPipeLine': 301,
+        },
+        'DOWNLOADER_MIDDLEWARES': {
+            'mySpider.middlewares.Collection81Middleware': 2341,
         }
     }
 

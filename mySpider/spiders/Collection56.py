@@ -16,6 +16,9 @@ class Collection56(scrapy.Spider):
     custom_settings = {
         'ITEM_PIPELINES': {
             'mySpider.pipelines.CollectionPipeLine': 301,
+        },
+        'DOWNLOADER_MIDDLEWARES': {
+            'mySpider.middlewares.Collection56Middleware': 2333,
         }
     }
 
@@ -29,6 +32,7 @@ class Collection56(scrapy.Spider):
         self.browser.quit()
 
     def parse(self, response, **kwargs):
+        #/html/body/div/div[3]/div/section/div[3]/div[2]/div[2]/div[1]
         li_list = response.xpath("/html/body/div/div[3]/div/section/div[3]/div[2]/div[2]/div")
         #print(li_list)
         for div in li_list:
@@ -64,7 +68,7 @@ class Collection56(scrapy.Spider):
         item = response.meta["item"]
         #/html/body/div/div[3]/div/section/div[2]/div/div/p[1]/span[1]
         item["collectionIntroduction"] = response.xpath(
-            'normalize-space(/html/body/div/div[3]/div/section/div[2]/div/div/p[1]/span[1])').extract_first()
+            'normalize-space(/html/body/div/div[3]/div/section/div[2]/div[1]/div/p[2])').extract_first()
         item["collectionIntroduction"] = "".join(item["collectionIntroduction"].split())
         item["collectionIntroduction"] = re.sub(r, '', item["collectionIntroduction"])
         print(item)

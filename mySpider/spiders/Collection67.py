@@ -17,6 +17,9 @@ class Collection67(scrapy.Spider):
     custom_settings = {
         'ITEM_PIPELINES': {
             'mySpider.pipelines.CollectionPipeLine': 301,
+        },
+        'DOWNLOADER_MIDDLEWARES': {
+            'mySpider.middlewares.Collection67Middleware': 2335,
         }
     }
 
@@ -46,7 +49,8 @@ class Collection67(scrapy.Spider):
 
             # 注意是否为全路径，一般后缀为@src有的是@oldsrc
             #/html/body/div[1]/div[2]/div[2]/div[2]/div[1]/div/img
-            #http://www.csmuseum.cn/UploadImg/1637323260602963455_b3a8f10d-e8f2-4f65-80ec-c07adf562a4a.jpg
+            #/html/body/div[1]/div[2]/div[2]/div[2]/div[2]/div/img
+            #http://www.csmuseum.cn/UploadImg/1637347419339557031_a9f9b56a-4e9d-4d57-95c1-ebb3349d9778.jpg
             item['collectionImageLink'] = "http://www.csmuseum.cn/" + str(div.xpath("./div/img/@src").extract_first())
 
             #注意是否是全路径

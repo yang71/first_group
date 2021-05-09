@@ -10,7 +10,10 @@ class Collection53(scrapy.Spider):
     custom_settings = {
         'ITEM_PIPELINES': {
             'mySpider.pipelines.CollectionPipeLine': 301,
-        }
+        },
+        'DOWNLOADER_MIDDLEWARES': {
+            'mySpider.middlewares.DefaultMiddleware': 0,
+        },
     }
 
     def parse(self, response, **kwargs):
@@ -20,7 +23,7 @@ class Collection53(scrapy.Spider):
             item = CollectionItem()
             item["museumID"] = 53
             item["museumName"] = "陈云纪念馆"
-            print(111)
+            #print(111)
             #注意是否是全路径
             #怎么判断是否是全路径
             #/html/body/form/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr[3]/td/table/tbody/tr/td[3]/div/span/span/div/div/table[1]/tbody/tr[1]/td[1]/table/tbody/tr/td/a
