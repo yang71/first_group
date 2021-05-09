@@ -32,6 +32,9 @@ def updateAll(sql):
     res = cur.fetchall()
     for row in res:
 
+        # 修改museumName
+        museumName = StrFilter.filter_2(row[1])
+
         # 修改openingTime
         openingTime = StrFilter.filter_2(row[2])
         if len(openingTime) <= 4:
@@ -66,7 +69,7 @@ def updateAll(sql):
         consultationTelephone,introduction,longitude,latitude,publicityVideoLink) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,
         %s) """
 
-        cur.execute(replace_sql, (str(row[0]), str(row[1]), openingTime, address, conTelephone, introduction,
+        cur.execute(replace_sql, (str(row[0]), museumName, openingTime, address, conTelephone, introduction,
                                   str(row[6]), str(row[7]), videoLink))
 
     conn.commit()

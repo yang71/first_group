@@ -50,12 +50,15 @@ def updateAll(sql):
         collectionName = StrFilter.filter_2(row[4])
         # print(collectionName)
 
+        # 修改museumName
+        museumName = StrFilter.filter_2(row[5])
+
         replace_sql = """replace into collection(collectionID,museumID,collectionIntroduction,collectionImageLink,collectionName,museumName) VALUES (%s,%s,%s,%s,%s,%s) """
 
         cur.execute(replace_sql,
                     (
                         str(row[0]), str(row[1]), collectionIntroduction,
-                        collectionImageLink, collectionName, str(row[5])))
+                        collectionImageLink, collectionName, museumName))
 
     conn.commit()
     cur.close()
