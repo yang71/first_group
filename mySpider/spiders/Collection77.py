@@ -10,12 +10,15 @@ chrome_options.add_argument("--disable-gpu")
 
 class Collection77(scrapy.Spider):
     name = "Collection77"
-    allowed_domains = ['ywj.hangzhou.gov.cn']
+    allowed_domains = ['hangzhou.gov.cn']
     start_urls = ['https://ywj.hangzhou.gov.cn/ymj-ms-collect-gm/']
 
     custom_settings = {
         'ITEM_PIPELINES': {
             'mySpider.pipelines.CollectionPipeLine': 301,
+        },
+        'DOWNLOADER_MIDDLEWARES': {
+            'mySpider.middlewares.Collection77Middleware': 2339,
         }
     }
 

@@ -16,6 +16,9 @@ class Collection92(scrapy.Spider):
     custom_settings = {
         'ITEM_PIPELINES': {
             'mySpider.pipelines.CollectionPipeLine': 301,
+        },
+        'DOWNLOADER_MIDDLEWARES': {
+            'mySpider.middlewares.Collection92Middleware': 2342,
         }
     }
 
@@ -30,6 +33,7 @@ class Collection92(scrapy.Spider):
 
     def parse(self, response, **kwargs):
             #/html/body/div/div/div/div[1]/ul/li[1]
+            #/html/body/div/div/div/div[1]/ul/li[2]
         li_list = response.xpath("/html/body/div/div/div/div[1]/ul/li")
         for li in li_list:
             item = CollectionItem()
@@ -46,7 +50,7 @@ class Collection92(scrapy.Spider):
             # 注意是否为全路径，一般后缀为@src有的是@oldsrc
             #/html/body/div/div/div/div[1]/ul/li[1]/img
             #http://www.crt.com.cn/mx/gcwwpig/1.jpg
-            item['collectionImageLink'] = "http://www.crt.com.cn/mx/" + li.xpath("./img/@src").extract_first()
+            item['collectionImageLink'] = "http://www.crt.com.cn/mx" + li.xpath("./img/@src").extract_first()
 
             item["collectionIntroduction"] = item['collectionName']
             print(item)

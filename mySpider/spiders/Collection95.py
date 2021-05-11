@@ -17,6 +17,9 @@ class Collection95(scrapy.Spider):
     custom_settings = {
         'ITEM_PIPELINES': {
             'mySpider.pipelines.CollectionPipeLine': 301,
+        },
+        'DOWNLOADER_MIDDLEWARES': {
+            'mySpider.middlewares.Collection95Middleware': 2344,
         }
     }
 

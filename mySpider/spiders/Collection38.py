@@ -18,8 +18,12 @@ class Collection38(scrapy.Spider):
     custom_settings = {
         'ITEM_PIPELINES': {
             'mySpider.pipelines.CollectionPipeLine': 301,
-        }
+        },
+        'DOWNLOADER_MIDDLEWARES': {
+            'mySpider.middlewares.DefaultMiddleware': 0,
+        },
     }
+
     def parse(self, response, **kwargs):
         li_list = response.xpath("/html/body/div[6]/ul/li")
         print(len(li_list))

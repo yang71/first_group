@@ -16,6 +16,9 @@ class Collection61(scrapy.Spider):
     custom_settings = {
         'ITEM_PIPELINES': {
             'mySpider.pipelines.CollectionPipeLine': 301,
+        },
+        'DOWNLOADER_MIDDLEWARES': {
+            'mySpider.middlewares.Collection61Middleware': 2334,
         }
     }
 
@@ -46,7 +49,7 @@ class Collection61(scrapy.Spider):
             item['collectionImageLink'] = div.xpath("./div/img/@src").extract_first()
 
             r = re.compile(u"\\n|\\r|\\[.*?]|\\t")
-            #/html/body/div/div[3]/div/section/div[2]/div/div/p[1]/span[1]
+            #/html/body/div[1]/div/div[2]/div[2]/div[2]/div[2]/div[1]/div/div[2]/div[1]/div[1]/div/div[1]/div/p
             item["collectionIntroduction"] = div.xpath(
                 'normalize-space(./div/p/text())').extract_first()
             item["collectionIntroduction"] = "".join(item["collectionIntroduction"].split())
