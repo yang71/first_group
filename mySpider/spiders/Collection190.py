@@ -7,7 +7,6 @@
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-import time
 
 from ..items import *
 from ..str_filter import *
