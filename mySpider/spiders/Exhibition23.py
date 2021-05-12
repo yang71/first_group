@@ -21,7 +21,7 @@ chrome_options.add_argument('log-level=3')
 class Exhibition23(scrapy.Spider):
     name = "Exhibition23"
     allowed_domains = ['xbpjng.cn']
-    start_urls = ['http://www.xbpjng.cn/PlatNews/platform.aspx?c=3f80c295-81c8-49f9-838f-b3cfce9bc5c9&z=795']
+    start_urls = ['http://www.xbpjng.cn/News/NewsList_New.aspx?id=795']
 
     custom_settings = {
         'ITEM_PIPELINES': {
@@ -40,15 +40,15 @@ class Exhibition23(scrapy.Spider):
         self.browser.quit()
 
     def parse(self, response, **kwargs):
-        li_list = response.xpath("//*[@id='ctl00']/div[3]/div/div[2]//a")
+        li_list = response.xpath("//*[@id='ctl00']/div[3]/div/div[2]/h2")
         print(len(li_list))
         for li in li_list:
             item = ExhibitionItem()
             item["museumID"] = 23
             item["museumName"] = "西柏坡纪念馆"
-            item["exhibitionName"] = StrFilter.filter_2(li.xpath("./text()").extract_first())
+            item["exhibitionName"] = StrFilter.filter_2(li.xpath("./a/text()").extract_first())
             item["exhibitionTime"] = "常设展览"
-            url = str(li.xpath("./a/@href").extract_first())
+            url = StrFilter.getDoamin(response) + '/News/' + str(li.xpath("./a/@href").extract_first())
             print(url)
             yield scrapy.Request(
                 url,
@@ -59,7 +59,7 @@ class Exhibition23(scrapy.Spider):
     def parseAnotherPage(self, response):
         item = response.meta["item"]
         item['exhibitionIntroduction'] = StrFilter.filter_2(
-            response.xpath("//*[@id='lb_Content']/p[2]").xpath('string(.)').extract_first())
-        item["exhibitionImageLink"] = response.xpath("//*[@id='form1']//img/@src").extract_first()
+            response.xpath("//div[@class='newcont']").xpath('string(.)').extract_first())
+        item["exhibitionImageLink"] = response.xpath("//div[@class='newcont']//img/@src").extract_first()
         print(item)
         yield item

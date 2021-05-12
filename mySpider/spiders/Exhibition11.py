@@ -41,7 +41,7 @@ class Exhibition11(scrapy.Spider):
 
     def parse(self, response, **kwargs):
         # li_list = response.xpath("//div[@class='wrap']/div[@class='list']/div[@class='item']")
-        li_list = response.xpath("//*[@id='ajax-list']/div[1]/div[1]")
+        li_list = response.xpath("//*[@id='ajax-list']/div[1]/div")
         print(len(li_list))
         for li in li_list:
             item = ExhibitionItem()

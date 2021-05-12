@@ -61,6 +61,6 @@ class Exhibition0(scrapy.Spider):
     def parseAnotherPage(self, response):
         item = response.meta["item"]
         item['exhibitionIntroduction'] = StrFilter.filter_2(
-            response.xpath("/html/body/div/div[3]/div[1]/div/div[3]/div/p[3]/text()").extract_first())
+            response.xpath("//div[@class='exInfo']").xpath('string(.)').extract_first())
         print(item)
         yield item
