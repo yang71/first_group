@@ -503,7 +503,7 @@ class Collection183Middleware(object):
         pass
 
     def process_response(self, request, response, spider):
-        if "tibetmuseum.com.cn" in request.url:
+        if spider.name in "Collection183":
             spider.browser.get(url=request.url)
             js = "window.scrollTo(0,document.body.scrollHeight)"
             spider.browser.execute_script(js)
@@ -655,3 +655,4 @@ class Exhibition24Middleware(object):
             return HtmlResponse(url=spider.browser.current_url, body=row_response, encoding="utf8", request=request)
         else:
             return response
+

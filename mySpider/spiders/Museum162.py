@@ -25,10 +25,10 @@ class Museum162(scrapy.Spider):
         item = MuseumBasicInformationItem()
         item["museumID"] = 162
         item["museumName"] = "成都武侯祠博物馆"
-        item["address"] = response.xpath("/html/body/div[3]/div[2]/div/div[1]/div[7]/dl[1]/dd[5]").xpath('string(.)').extract_first()
+        item["address"] = response.xpath("/html/body/div[3]/div[2]/div/div[1]/div[7]/dl[1]/dd[3]").xpath('string(.)').extract_first()
         item["address"] = re.sub(r, '', item["address"])
 
-        item["openingTime"] = response.xpath("/html/body/div[3]/div[2]/div/div[1]/div[7]/dl[1]/dd[3]").xpath('string(.)').extract_first()
+        item["openingTime"] = response.xpath("/html/body/div[3]/div[2]/div/div[1]/div[7]/dl[1]/dd[5]").xpath('string(.)').extract_first()
         item["openingTime"] = re.sub(r, '', item["openingTime"])
 
         item["consultationTelephone"] = "028-85552397"
