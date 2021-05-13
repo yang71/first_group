@@ -49,7 +49,7 @@ class Exhibition56(scrapy.Spider):
             #http://www.njmuseum.com/files/nb/exhibition/images/2021/04/08/0209f2c17ee7cc2991b02abcc77a927a.jpg
             str1 = 'http://www.njmuseum.com/'
             str2 = str(li.xpath(
-                "./a/div[2]/img/@src").extract_first())
+                "./a/div[2]/img/@data-src").extract_first())
             item["exhibitionImageLink"] = str1 + str2
 
             #/html/body/div/div[3]/div/section/div[3]/div/div[2]/ul/li[1]/a/div[3]/div[2]/span[2]/em
