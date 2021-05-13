@@ -11,7 +11,10 @@ class Museum56(scrapy.Spider):
     custom_settings = {
         'ITEM_PIPELINES': {
             'mySpider.pipelines.MuseumPipeLine': 300,
-        }
+        },
+        'DOWNLOADER_MIDDLEWARES': {
+            'mySpider.middlewares.DefaultMiddleware': 0,
+        },
     }
     # 需要重写的部分
     def parse(self, response, **kwargs):
