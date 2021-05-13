@@ -16,7 +16,7 @@ def getConnection():
     return conn
 
 
-# row[0] - collectionID
+# row[0] - exhibitionID
 # row[1] - exhibitionName
 # row[2] - exhibitionTime
 # row[3] - exhibitionIntroduction
@@ -57,13 +57,13 @@ def updateAll(sql):
 
         # 修改museumName
         museumName = StrFilter.filter_2(row[5])
-        #
-        # replace_sql = """replace into collection(collectionID,museumID,collectionIntroduction,collectionImageLink,collectionName,museumName) VALUES (%s,%s,%s,%s,%s,%s) """
-        #
-        # cur.execute(replace_sql,
-        #             (
-        #                 str(row[0]), str(row[1]), collectionIntroduction,
-        #                 collectionImageLink, collectionName, museumName))
+
+        replace_sql = """replace into collection(exhibitionID,exhibitionName,exhibitionTime,exhibitionIntroduction,museumID,museumName,exhibitionImageLink) VALUES (%s,%s,%s,%s,%s,%s,%s) """
+
+        cur.execute(replace_sql,
+                    (
+                        str(row[0]), exhibitionName, exhibitionTime,
+                        exhibitionIntroduction, str(row[4]), museumName, exhibitionImageLink))
 
     conn.commit()
     cur.close()
