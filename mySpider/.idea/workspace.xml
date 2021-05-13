@@ -1,7 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ace0c23-e549-4577-a0a7-97a0e6a51e3f" name="Default Changelist" comment="" />
+    <list default="true" id="3ace0c23-e549-4577-a0a7-97a0e6a51e3f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition30.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition31.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition32.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition33.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition34.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition35.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition36.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition37.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition38.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition39.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition40.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition41.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition42.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition43.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition44.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition45.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition46.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition47.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition48.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition49.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition50.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition51.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition52.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition53.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition54.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition55.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition56.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition57.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition58.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spiders/Exhibition59.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares.py" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -88,6 +88,18 @@ DOWNLOADER_MIDDLEWARES = {
     'mySpider.middlewares.Exhibition11Middleware': 65537,
     'mySpider.middlewares.Exhibition23Middleware': 65538,
     'mySpider.middlewares.Exhibition24Middleware': 65539,
+    'mySpider.middlewares.Exhibition30Middleware': 2347,
+    'mySpider.middlewares.Exhibition34Middleware': 2348,
+    'mySpider.middlewares.Exhibition36Middleware': 2349,
+    'mySpider.middlewares.Exhibition37Middleware': 2350,
+    'mySpider.middlewares.Exhibition38Middleware': 2351,
+    'mySpider.middlewares.Exhibition42Middleware': 2352,
+    'mySpider.middlewares.Exhibition49Middleware': 2353,
+    'mySpider.middlewares.Exhibition52Middleware': 2354,
+    'mySpider.middlewares.Exhibition53Middleware': 2355,
+    'mySpider.middlewares.Exhibition55Middleware': 2356,
+    'mySpider.middlewares.Exhibition56Middleware': 2357,
+    'mySpider.middlewares.Exhibition57Middleware': 2358,
 }
 
 # Enable or disable extensions
