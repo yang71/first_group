@@ -58,7 +58,7 @@ def updateAll(sql):
         # 修改museumName
         museumName = StrFilter.filter_2(row[5])
 
-        replace_sql = """replace into collection(exhibitionID,exhibitionName,exhibitionTime,exhibitionIntroduction,museumID,museumName,exhibitionImageLink) VALUES (%s,%s,%s,%s,%s,%s,%s) """
+        replace_sql = """replace into exhibition(exhibitionID,exhibitionName,exhibitionTime,exhibitionIntroduction,museumID,museumName,exhibitionImageLink) VALUES (%s,%s,%s,%s,%s,%s,%s) """
 
         cur.execute(replace_sql,
                     (
