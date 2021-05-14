@@ -1,8 +1,8 @@
+import time
 
 from scrapy.commands import ScrapyCommand
 from scrapy.exceptions import UsageError
 from scrapy.utils.conf import arglist_to_dict
-
 
 class Command(ScrapyCommand):
     requires_project = True
@@ -30,9 +30,13 @@ class Command(ScrapyCommand):
             raise UsageError("Invalid -a value, use -a NAME=VALUE", print_help=False)
 
     def run(self, args, opts):
+        start = time.time()
         spider_list = self.crawler_process.spider_loader.list()
         for name in spider_list:  # 遍历所有爬虫
-            if name.startswith(''):
-                self.crawler_process.crawl(name, **opts.__dict__)  # 运行爬虫
+            if name.startswith('Museum0'):
+                if(name != 'Museum15'):
+                    self.crawler_process.crawl(name, **opts.__dict__)  # 运行爬虫
 
         self.crawler_process.start()  # 启动进程
+        end = time.time()
+        print("runningtime:%.2f秒" % (end - start))

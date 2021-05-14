@@ -15,6 +15,10 @@ class MuseumPipeLine(object):
     def __init__(self, dbpool):
         self.dbpool = dbpool
 
+    def close_spider(self, spider):
+        """Discard the database pool on spider close"""
+        self.dbpool.close()
+
     @classmethod
     def from_settings(cls, settings):  # 函数名固定，会被scrapy调用，直接可用settings的值
         """
@@ -65,6 +69,10 @@ class CollectionPipeLine(object):
     def __init__(self, dbpool):
         self.dbpool = dbpool
 
+    def close_spider(self, spider):
+        """Discard the database pool on spider close"""
+        self.dbpool.close()
+
     @classmethod
     def from_settings(cls, settings):
         adbparams = dict(
@@ -104,6 +112,10 @@ class CollectionPipeLine(object):
 class ExhibitionPipeLine(object):
     def __init__(self, dbpool):
         self.dbpool = dbpool
+
+    def close_spider(self, spider):
+        """Discard the database pool on spider close"""
+        self.dbpool.close()
 
     @classmethod
     def from_settings(cls, settings):

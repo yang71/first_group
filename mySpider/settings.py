@@ -36,7 +36,7 @@ ROBOTSTXT_OBEY = False
 COOKIES_ENABLED = True
 
 # Disable Telnet Console (enabled by default)
-# TELNETCONSOLE_ENABLED = False
+TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
 # DEFAULT_REQUEST_HEADERS = {
@@ -127,11 +127,11 @@ ITEM_PIPELINES = {
 
 # 连接数据MySQL
 # 数据库地址
-MYSQL_HOST = '46.17.172.103'
+MYSQL_HOST =  '120.26.86.149' #'46.17.172.103'
 # 数据库用户名:
-MYSQL_USER = 'u606804608_jerAx'
+MYSQL_USER = 'root' #'u606804608_jerAx'
 # 数据库密码
-MYSQL_PASSWORD = 'Password12345678'
+MYSQL_PASSWORD = 'jk1803_SE' #'Password12345678'
 # 数据库端口
 MYSQL_PORT = 3306
 # 数据库名称
