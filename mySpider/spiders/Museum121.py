@@ -28,7 +28,7 @@ class Museum121(scrapy.Spider):
         item = MuseumBasicInformationItem()
         item["museumID"] = 121
         item["museumName"] = "临沂市博物馆"
-        item["address"] = response.xpath("/html/body/div[3]/div[2]/div/div[1]/div[7]/dl[1]/dd[5]").xpath('string(.)').extract_first()
+        item["address"] = response.xpath("/html/body/div[3]/div[2]/div/div[1]/div[7]/dl[2]/dd[1]").xpath('string(.)').extract_first()
         item["address"] = re.sub(r, '', item["address"])
 
         item["openingTime"] = response.xpath("/html/body/div[3]/div[2]/div/div[1]/div[7]/dl[1]/dd[4]").xpath('string(.)').extract_first()

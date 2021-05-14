@@ -21,7 +21,7 @@ configure_logging()
 runner = CrawlerRunner(get_project_settings())
 
 #忽略爬虫列表
-ignore = ['Museum15', 'Collection0']
+ignore = ['Collection0', 'Exhibition0']
 
 @defer.inlineCallbacks
 def crawl(key):

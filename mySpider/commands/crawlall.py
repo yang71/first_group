@@ -33,8 +33,8 @@ class Command(ScrapyCommand):
         start = time.time()
         spider_list = self.crawler_process.spider_loader.list()
         for name in spider_list:  # 遍历所有爬虫
-            if name.startswith('Museum0'):
-                if(name != 'Museum15'):
+            if name.startswith('Museum'):
+                if(name != 'Museum0'):
                     self.crawler_process.crawl(name, **opts.__dict__)  # 运行爬虫
 
         self.crawler_process.start()  # 启动进程

@@ -47,8 +47,8 @@ def updateAll(sql):
         # print(collectionImageLink)
 
         # 修改collectionName
-        collectionName = StrFilter.filter_2(row[4])
-        # print(collectionName)
+        collectionName = StrFilter.filter_2(row[4]).strip("'")
+        print(collectionName)
 
         # 修改museumName
         museumName = StrFilter.filter_2(row[5])

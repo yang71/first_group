@@ -38,7 +38,7 @@ class Museum152(scrapy.Spider):
         item["consultationTelephone"] = re.sub(r, '', item["consultationTelephone"])
 
         item["publicityVideoLink"] = None
-        item["longitude"] = ":116.138477"
+        item["longitude"] = "116.138477"
         item["latitude"] = "24.316629"
 
         item["introduction"] = response.xpath("/html/body/div[3]/div[2]/div/div[1]/div[4]").xpath('string(.)').extract_first()
