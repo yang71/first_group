@@ -32,6 +32,7 @@ def updateAll(sql):
     cur.execute(sql)
     res = cur.fetchall()
     for row in res:
+        print(row[1])
 
         # 修改museumName
         museumName = StrFilter.filter_2(row[1])
@@ -49,13 +50,13 @@ def updateAll(sql):
         # print(address)
 
         # 修改consultationTelephone
-        if len(row[4]) > 0:
+        if row[4] is not None and len(row[4]) > 0:
             conTelephone = StrFilter.filter_Telephone(row[4])
             if len(conTelephone) <= 4:
                 conTelephone = ""
         else:
             conTelephone = ""
-        print(conTelephone)
+        # print(conTelephone)
 
         # 修改introduction
         introduction = StrFilter.filter_2(row[5])
@@ -69,7 +70,7 @@ def updateAll(sql):
             videoLink = None
         # print(videoLink)
 
-        replace_sql = """replace into MuseumBasicInformation(museumID,museumName,openingTime,address,
+        replace_sql = """replace into MuseumBasicInformation_copy1(museumID,museumName,openingTime,address,
         consultationTelephone,introduction,longitude,latitude,publicityVideoLink) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,
         %s) """
 
@@ -82,5 +83,5 @@ def updateAll(sql):
 
 
 if __name__ == '__main__':
-    select_sql = 'select * from MuseumBasicInformation'
+    select_sql = 'select * from MuseumBasicInformation_copy1'
     updateAll(select_sql)

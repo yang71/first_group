@@ -51,7 +51,7 @@ class MuseumPipeLine(object):
 
     def do_insert(self, cursor, item):
         # 对数据库进行插入操作，并不需要commit，twisted会自动commit
-        insert_sql = """replace into MuseumBasicInformation(museumID,museumName,openingTime,address,
+        insert_sql = """replace into MuseumBasicInformation_copy1(museumID,museumName,openingTime,address,
         consultationTelephone,introduction,longitude,latitude,publicityVideoLink) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,
         %s) """
         cursor.execute(insert_sql, (
@@ -97,7 +97,7 @@ class CollectionPipeLine(object):
         tt = cursor._connection._connection
         tt.ping(reconnect=True)
 
-        insert_sql = """replace into Collection(collectionName,collectionImageLink,collectionIntroduction,museumID,
+        insert_sql = """replace into Collection_copy1(collectionName,collectionImageLink,collectionIntroduction,museumID,
         museumName) VALUES (%s,%s,%s,%s,%s) """
 
         cursor.execute(insert_sql, (
@@ -141,7 +141,7 @@ class ExhibitionPipeLine(object):
         tt = cursor._connection._connection
         tt.ping(reconnect=True)
 
-        insert_sql = """replace into Exhibition(exhibitionName,exhibitionImageLink,exhibitionIntroduction,
+        insert_sql = """replace into Exhibition_copy1(exhibitionName,exhibitionImageLink,exhibitionIntroduction,
         exhibitionTime,museumID, museumName) VALUES (%s,%s,%s,%s,%s,%s) """
 
         cursor.execute(insert_sql, (

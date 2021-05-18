@@ -145,11 +145,11 @@ ITEM_PIPELINES = {
 
 # 连接数据MySQL
 # 数据库地址
-MYSQL_HOST = '46.17.172.103' #'120.26.86.149'
+MYSQL_HOST =  '120.26.86.149'#'46.17.172.103'
 # 数据库用户名:
-MYSQL_USER = 'u606804608_jerAx' #'root'
+MYSQL_USER =  'root'#'u606804608_jerAx'
 # 数据库密码
-MYSQL_PASSWORD = 'Password12345678' #'jk1803_SE'
+MYSQL_PASSWORD =  'jk1803_SE'#'Password12345678'
 # 数据库端口
 MYSQL_PORT = 3306
 # 数据库名称

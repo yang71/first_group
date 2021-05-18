@@ -30,7 +30,6 @@ class Museum104(scrapy.Spider):
         item["publicityVideoLink"] = None
         item["longitude"] = "120.389455"
         item["latitude"] = "36.072227"
-        item["introduction"] = response.xpath(
-            '/html/body/div[2]/table/tbody/tr/td[1]/dl/dd/ol/table[2]/tbody/tr[3]/td/text()[1]').extract()
+        item["introduction"] = "青岛市博物馆是国家一级博物馆和全国古籍重点保护单位，馆藏文物包括书法、绘画、陶瓷器、铜器、玉器、钱币、玺印、甲骨、竹木牙角器等三十余个门类十多万件，其中书法、陶瓷器、玉器、钱币为馆藏特色。馆内还收藏有4万余件青岛历史发展各阶段留下来的文物资料，反映了青岛建置以来城市的发展，是全面了解青岛历史的重要场所。"
         print(item)
         yield item

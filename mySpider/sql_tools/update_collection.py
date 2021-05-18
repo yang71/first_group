@@ -54,7 +54,7 @@ def updateAll(sql):
         # 修改museumName
         museumName = StrFilter.filter_2(row[5])
 
-        replace_sql = """replace into Collection(collectionID,museumID,collectionIntroduction,collectionImageLink,collectionName,museumName) VALUES (%s,%s,%s,%s,%s,%s) """
+        replace_sql = """replace into Collection_copy1(collectionID,museumID,collectionIntroduction,collectionImageLink,collectionName,museumName) VALUES (%s,%s,%s,%s,%s,%s) """
 
         cur.execute(replace_sql,
                     (
@@ -67,5 +67,5 @@ def updateAll(sql):
 
 
 if __name__ == '__main__':
-    select_sql = 'select * from Collection'
+    select_sql = 'select * from Collection_copy1'
     updateAll(select_sql)
