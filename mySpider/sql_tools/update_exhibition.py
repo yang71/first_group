@@ -12,7 +12,8 @@ from str_filter import *
 
 
 def getConnection():
-    conn = pymysql.connect(host='localhost', port=3306, user='root', password='ana', db='spider_test')
+    conn = pymysql.connect(host='120.26.86.149', port=3306, user='root', password='jk1803_SE',
+                           db='u606804608_MuseumSpider')
     return conn
 
 
@@ -58,7 +59,7 @@ def updateAll(sql):
         # 修改museumName
         museumName = StrFilter.filter_2(row[5])
 
-        replace_sql = """replace into exhibition(exhibitionID,exhibitionName,exhibitionTime,exhibitionIntroduction,museumID,museumName,exhibitionImageLink) VALUES (%s,%s,%s,%s,%s,%s,%s) """
+        replace_sql = """replace into Exhibition(exhibitionID,exhibitionName,exhibitionTime,exhibitionIntroduction,museumID,museumName,exhibitionImageLink) VALUES (%s,%s,%s,%s,%s,%s,%s) """
 
         cur.execute(replace_sql,
                     (
@@ -71,5 +72,5 @@ def updateAll(sql):
 
 
 if __name__ == '__main__':
-    select_sql = 'select * from exhibition'
+    select_sql = 'select * from Exhibition'
     updateAll(select_sql)
