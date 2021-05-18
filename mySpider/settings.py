@@ -36,7 +36,7 @@ ROBOTSTXT_OBEY = False
 COOKIES_ENABLED = True
 
 # Disable Telnet Console (enabled by default)
-# TELNETCONSOLE_ENABLED = False
+TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
 # DEFAULT_REQUEST_HEADERS = {
@@ -94,6 +94,18 @@ DOWNLOADER_MIDDLEWARES = {
     'mySpider.middlewares.Exhibition73Middleware': 4543,
     'mySpider.middlewares.Exhibition77Middleware': 4544,
     'mySpider.middlewares.Exhibition98Middleware': 4545,
+    'mySpider.middlewares.Exhibition30Middleware': 2347,
+    'mySpider.middlewares.Exhibition34Middleware': 2348,
+    'mySpider.middlewares.Exhibition36Middleware': 2349,
+    'mySpider.middlewares.Exhibition37Middleware': 2350,
+    'mySpider.middlewares.Exhibition38Middleware': 2351,
+    'mySpider.middlewares.Exhibition42Middleware': 2352,
+    'mySpider.middlewares.Exhibition49Middleware': 2353,
+    'mySpider.middlewares.Exhibition52Middleware': 2354,
+    'mySpider.middlewares.Exhibition53Middleware': 2355,
+    'mySpider.middlewares.Exhibition55Middleware': 2356,
+    'mySpider.middlewares.Exhibition56Middleware': 2357,
+    'mySpider.middlewares.Exhibition57Middleware': 2358,
 }
 
 # Enable or disable extensions
@@ -133,11 +145,11 @@ ITEM_PIPELINES = {
 
 # 连接数据MySQL
 # 数据库地址
-MYSQL_HOST = '46.17.172.103'
+MYSQL_HOST = '46.17.172.103' #'120.26.86.149'
 # 数据库用户名:
-MYSQL_USER = 'u606804608_jerAx'
+MYSQL_USER = 'u606804608_jerAx' #'root'
 # 数据库密码
-MYSQL_PASSWORD = 'Password12345678'
+MYSQL_PASSWORD = 'Password12345678' #'jk1803_SE'
 # 数据库端口
 MYSQL_PORT = 3306
 # 数据库名称

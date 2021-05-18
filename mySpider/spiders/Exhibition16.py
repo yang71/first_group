@@ -32,7 +32,8 @@ class Exhibition16(scrapy.Spider):
         item["exhibitionImageLink"] = StrFilter.getDoamin(response) + str(response.xpath(
             "//div/a/img/@src").extract_first())
         item["exhibitionName"] = StrFilter.filter_2(
-            response.xpath("/html/body/div[2]/div[2]/div[2]/div[3]/table//tr[1]/td/span/text()").extract_first())
+            response.xpath("/html/body/div[2]/div[2]/div[2]/div[3]/table//tr[1]/td/span").xpath(
+                'string(.)').extract_first())
         item["exhibitionTime"] = "常设展览"
         item['exhibitionIntroduction'] = StrFilter.filter_2(
             response.xpath("//td[@class='wz']").xpath('string(.)').extract_first())

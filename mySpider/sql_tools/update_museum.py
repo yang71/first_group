@@ -11,7 +11,8 @@ from str_filter import *
 
 
 def getConnection():
-    conn = pymysql.connect(host='localhost', port=3306, user='root', password='ana', db='spider_test')
+    conn = pymysql.connect(host='120.26.86.149', port=3306, user='root', password='jk1803_SE',
+                           db='u606804608_MuseumSpider')
     return conn
 
 
@@ -39,7 +40,7 @@ def updateAll(sql):
         openingTime = StrFilter.filter_2(row[2])
         if len(openingTime) <= 4:
             openingTime = ""
-        print(openingTime)
+        # print(openingTime)
 
         # 修改address
         address = StrFilter.filter_2(row[3]).replace("地址：", "")
@@ -48,10 +49,13 @@ def updateAll(sql):
         # print(address)
 
         # 修改consultationTelephone
-        conTelephone = StrFilter.filter_Telephone(row[4])
-        if len(conTelephone) <= 4:
+        if len(row[4]) > 0:
+            conTelephone = StrFilter.filter_Telephone(row[4])
+            if len(conTelephone) <= 4:
+                conTelephone = ""
+        else:
             conTelephone = ""
-        # print(conTelephone)
+        print(conTelephone)
 
         # 修改introduction
         introduction = StrFilter.filter_2(row[5])
@@ -65,7 +69,7 @@ def updateAll(sql):
             videoLink = None
         # print(videoLink)
 
-        replace_sql = """replace into museumbasicinformation(museumID,museumName,openingTime,address,
+        replace_sql = """replace into MuseumBasicInformation(museumID,museumName,openingTime,address,
         consultationTelephone,introduction,longitude,latitude,publicityVideoLink) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,
         %s) """
 
@@ -78,5 +82,5 @@ def updateAll(sql):
 
 
 if __name__ == '__main__':
-    select_sql = 'select * from museumbasicinformation'
+    select_sql = 'select * from MuseumBasicInformation'
     updateAll(select_sql)

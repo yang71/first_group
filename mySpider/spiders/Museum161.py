@@ -17,7 +17,10 @@ class Museum161(scrapy.Spider):
     custom_settings = {
         'ITEM_PIPELINES': {
             'mySpider.pipelines.MuseumPipeLine': 300,
-        }
+        },
+        'DOWNLOADER_MIDDLEWARES': {
+            'mySpider.middlewares.DefaultMiddleware': 0,
+        },
     }
 
     def parse(self, response, **kwargs):
@@ -25,7 +28,7 @@ class Museum161(scrapy.Spider):
         item = MuseumBasicInformationItem()
         item["museumID"] = 161
         item["museumName"] = "三星堆博物馆"
-        item["address"] = response.xpath("/html/body/div[3]/div[2]/div/div[1]/div[7]/dl[1]/dd[6]").xpath('string(.)').extract_first()
+        item["address"] = response.xpath("/html/body/div[3]/div[2]/div/div[1]/div[8]/dl[1]/dd[6]").xpath('string(.)').extract_first()
         item["address"] = re.sub(r, '', item["address"])
 
         item["openingTime"] = response.xpath("/html/body/div[3]/div[2]/div/div[1]/div[75]").xpath('string(.)').extract_first()

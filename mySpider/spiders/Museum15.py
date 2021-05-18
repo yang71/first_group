@@ -10,8 +10,8 @@ from ..items import *
 
 class Museum15(scrapy.Spider):
     name = "Museum15"
-    allowed_domains = ['www.cnfm.org.cn']
-    start_urls = ['http://www.cnfm.org.cn/index_2019.shtml']
+    allowed_domains = ['cnfm.org.cn']
+    start_urls = ['http://www.cnfm.org.cn']
 
     custom_settings = {
         'ITEM_PIPELINES': {
