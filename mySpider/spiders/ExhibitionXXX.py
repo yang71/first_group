@@ -10,6 +10,7 @@ from ..items import *
 from ..str_filter import *
 from ..auxiliary_files import ExhibitionXXX_supporting
 
+
 class ExhibitionXXX(scrapy.Spider):
     name = "ExhibitionXXX"
     allowed_domains = ['']
