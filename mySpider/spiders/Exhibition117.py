@@ -30,7 +30,7 @@ class Exhibition117(scrapy.Spider):
         for li in li_list:
             item = ExhibitionItem()
             item["museumID"] = 117
-            item["museumName"] = "南京市博物总馆"
+            item["museumName"] = "齐文化博物院"
             item["exhibitionName"] = StrFilter.filter(
                 li.xpath("./div/span").xpath('string(.)').extract_first())
 

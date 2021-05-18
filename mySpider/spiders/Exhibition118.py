@@ -26,7 +26,7 @@ class Exhibition118(scrapy.Spider):
 
     def parse(self, response, **kwargs):
         li_list = response.xpath("/html/body/table[4]/tbody/tr/td[3]/table/tbody/tr[1]/td/table[2]/tbody/tr[1]/td/table")
-        print(len(li_list))
+        #print(len(li_list))
         for li in li_list:
             item = ExhibitionItem()
             item["museumID"] = 118

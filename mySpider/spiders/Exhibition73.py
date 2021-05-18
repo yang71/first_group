@@ -5,18 +5,9 @@
 # @File    : Exhibition73.py
 # @Software: PyCharm
 
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-
 from ..items import *
 from ..str_filter import *
 from ..auxiliary_files import Exhibition73_supporting
-
-chrome_options = Options()
-chrome_options.add_argument("--headless")
-chrome_options.add_argument('--ignore-certificate-errors')
-chrome_options.add_argument("--disable-gpu")
-chrome_options.add_argument('log-level=0')
 
 class Exhibition73(scrapy.Spider):
     name = "Exhibition73"
@@ -32,16 +23,10 @@ class Exhibition73(scrapy.Spider):
         },
     }
 
-    def __init__(self):
-        self.browser = webdriver.Chrome(chrome_options=chrome_options)
-        super().__init__()
-
-    def close(self, spider, reason):
-        self.browser.quit()
 
     def parse(self, response, **kwargs):
         li_list = response.xpath("//*[@id='app']/div[2]/div/ul/li")
-        print(len(li_list))
+       # print(len(li_list))
         for li in li_list:
             item = ExhibitionItem()
             item["museumID"] = 73
@@ -54,5 +39,3 @@ class Exhibition73(scrapy.Spider):
                 li.xpath("./div/p[3]").xpath('string(.)').extract_first())
             item["exhibitionTime"] = StrFilter.filter(
                 li.xpath("./div/p[1]").xpath('string(.)').extract_first())
-            print(item)
-            yield item

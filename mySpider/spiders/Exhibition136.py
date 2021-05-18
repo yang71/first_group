@@ -9,7 +9,7 @@
 from ..items import *
 from ..str_filter import *
 from ..auxiliary_files import Exhibition136_supporting
-
+''''''
 class Exhibition136(scrapy.Spider):
     name = "Exhibition136"
     allowed_domains = ['changjiangcp.com']
@@ -36,5 +36,5 @@ class Exhibition136(scrapy.Spider):
                 response.xpath("/html/body/div[5]/div/div[1]/div").xpath('string(.)').extract_first())
             item["exhibitionTime"] = StrFilter.filter(
                 response.xpath("/html/body/div[5]/div/div[1]/div").xpath('string(.)').extract_first())
-            print(item)
-            yield item
+
+            #yield item

@@ -35,5 +35,3 @@ class Exhibition100(scrapy.Spider):
             item['exhibitionIntroduction'] = StrFilter.filter(
                 response.xpath("/html/body/table[4]/tbody/tr/td[3]/table/tbody/tr[4]/td").xpath('string(.)').extract_first())
             item["exhibitionTime"] = "常设展览"
-            print(item)
-            yield item

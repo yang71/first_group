@@ -12,12 +12,6 @@ from ..items import *
 from ..str_filter import *
 from ..auxiliary_files import Exhibition67_supporting
 
-chrome_options = Options()
-chrome_options.add_argument("--headless")
-chrome_options.add_argument('--ignore-certificate-errors')
-chrome_options.add_argument("--disable-gpu")
-chrome_options.add_argument('log-level=0')
-
 class Exhibition67(scrapy.Spider):
     name = "Exhibition67"
     allowed_domains = ['csmuseum.cn']
@@ -32,12 +26,6 @@ class Exhibition67(scrapy.Spider):
         },
     }
 
-    def __init__(self):
-        self.browser = webdriver.Chrome(chrome_options=chrome_options)
-        super().__init__()
-
-    def close(self, spider, reason):
-        self.browser.quit()
 
     def parse(self, response, **kwargs):
             item = ExhibitionItem()
@@ -51,5 +39,3 @@ class Exhibition67(scrapy.Spider):
                 response.xpath("//*[@id='app']/div[2]/div[2]/p[2]").xpath('string(.)').extract_first())
             item['exhibitionIntroduction'] = StrFilter.filter(
                 response.xpath("//*[@id='app']/div[2]/div[2]/p[4]").xpath('string(.)').extract_first())
-            print(item)
-            yield item

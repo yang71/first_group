@@ -26,7 +26,7 @@ class Exhibition131(scrapy.Spider):
 
     def parse(self, response, **kwargs):
         li_list = response.xpath("//*[@id='ulExhibitionList']/li")
-        print(len(li_list))
+        #print(len(li_list))
         for li in li_list:
             item = ExhibitionItem()
             item["museumID"] = 131
@@ -50,5 +50,3 @@ class Exhibition131(scrapy.Spider):
             response.xpath("//*[@id='divContent']").xpath('string(.)').extract_first())
         item["exhibitionTime"] = StrFilter.filter(
             response.xpath("//*[@id='spPublicDate']").xpath('string(.)').extract_first())
-        print(item)
-        yield item

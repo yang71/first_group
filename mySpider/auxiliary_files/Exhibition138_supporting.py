@@ -6,4 +6,4 @@
 # @Software: PyCharm
 
 class Exhibition138Supporting:
-    startUrl = ['http://www.njmuseumadmin.com/Exhibition/index/id/40']
+    startUrl = ['https://www.szbwg.net/list-15-1.html']

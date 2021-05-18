@@ -36,5 +36,3 @@ class Exhibition111(scrapy.Spider):
                 response.xpath("//*[@id='app']/div[2]/div/div[2]/div/div[2]").xpath('string(.)').extract_first())
             item["exhibitionTime"] = StrFilter.filter(
                 response.xpath("//*[@id='app']/div[2]/div/div[2]/div/div[1]/div[2]/p[1]").xpath('string(.)').extract_first())
-            print(item)
-            yield item

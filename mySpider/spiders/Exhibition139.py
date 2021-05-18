@@ -12,7 +12,7 @@ from ..auxiliary_files import Exhibition139_supporting
 
 class Exhibition139(scrapy.Spider):
     name = "Exhibition139"
-    allowed_domains = ['njmuseumadmin.com']
+    allowed_domains = ['hnmuseum.com']
     start_urls = Exhibition139_supporting.Exhibition139Supporting.startUrl
 
     custom_settings = {
@@ -25,30 +25,15 @@ class Exhibition139(scrapy.Spider):
     }
 
     def parse(self, response, **kwargs):
-        li_list = response.xpath("//*[@id='form']/div[3]/div[4]/div")
-        print(len(li_list))
-        for li in li_list:
             item = ExhibitionItem()
             item["museumID"] = 139
-            item["museumName"] = "南京市博物总馆"
+            item["museumName"] = "湖南省博物馆"
             item["exhibitionName"] = StrFilter.filter(
-                li.xpath("./div/span").xpath('string(.)').extract_first())
-
-            url = StrFilter.getDoamin(response) + str(
-                li.xpath("./a/@href").extract_first())
-            yield scrapy.Request(
-                url,
-                callback=self.parseAnotherPage,
-                meta={"item": item}
-            )
-
-    def parseAnotherPage(self, response):
-        item = response.meta["item"]
-        item["exhibitionImageLink"] = StrFilter.getDoamin(response) + str(
-            response.xpath("//*[@id='form']/div[3]/div[2]/div/div[1]/img/@src").extract_first())
-        item['exhibitionIntroduction'] = StrFilter.filter(
-            response.xpath("//*[@id='form']/div[3]/div[3]").xpath('string(.)').extract_first())
-        item["exhibitionTime"] = StrFilter.filter(
-            response.xpath("//*[@id='form']/div[3]/div[2]/div/div[2]/dl/dt[1]/b").xpath('string(.)').extract_first())
-        print(item)
-        yield item
+                response.xpath("//*[@id='node-850']/div/div/div/div/div[2]/div[2]/h3").xpath('string(.)').extract_first())
+            item["exhibitionImageLink"] = StrFilter.getDoamin(response) + str(
+                response.xpath("//*[@id='node-850']/div/div/div/div/div[2]/div[1]/img/@src").extract_first())
+            item['exhibitionIntroduction'] = StrFilter.filter(
+                response.xpath("//*[@id='node-850']/div/div/div/div/div[2]/div[2]/p").xpath('string(.)').extract_first())
+            item["exhibitionTime"] = "临时展览"
+            print(item)
+            yield item
