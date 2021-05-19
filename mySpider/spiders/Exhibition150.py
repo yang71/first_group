@@ -28,6 +28,6 @@ class Exhibition150(scrapy.Spider):
                 "./div[22]/div/a/img/@src").extract_first())
             item["exhibitionName"] = StrFilter.filter_2(li.xpath("./div[22]/text()").extract_first())
             item["exhibitionTime"] = None
-            item['exhibitionIntroduction'] = StrFilter.filter_2(li.xpath("./div[22]").extract_first())
+            item['exhibitionIntroduction'] = StrFilter.filter(li.xpath("./div[22]").extract_first())
             print(item)
             yield item
