@@ -15,6 +15,7 @@ from ..auxiliary_files import Collection164_supporting
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-gpu")
+chrome_options.add_argument('log-level=3')
 
 class Collection164(scrapy.Spider):
     name = "Collection164"

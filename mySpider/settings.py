@@ -88,12 +88,12 @@ DOWNLOADER_MIDDLEWARES = {
     'mySpider.middlewares.Exhibition11Middleware': 65537,
     'mySpider.middlewares.Exhibition23Middleware': 65538,
     'mySpider.middlewares.Exhibition24Middleware': 65539,
-    'mySpider.middlewares.Exhibition61Middleware': 4540,
-    'mySpider.middlewares.Exhibition67Middleware': 4541,
-    'mySpider.middlewares.Exhibition70Middleware': 4542,
-    'mySpider.middlewares.Exhibition73Middleware': 4543,
-    'mySpider.middlewares.Exhibition77Middleware': 4544,
-    'mySpider.middlewares.Exhibition98Middleware': 4545,
+    'mySpider.middlewares.Exhibition61Middleware': 4540,#1
+    'mySpider.middlewares.Exhibition67Middleware': 4541,#1
+    'mySpider.middlewares.Exhibition70Middleware': 4542,#1
+    'mySpider.middlewares.Exhibition73Middleware': 4543,#1
+    #'mySpider.middlewares.Exhibition77Middleware': 4544,#0
+    'mySpider.middlewares.Exhibition98Middleware': 4545,#1
     'mySpider.middlewares.Exhibition30Middleware': 2347,
     'mySpider.middlewares.Exhibition34Middleware': 2348,
     'mySpider.middlewares.Exhibition36Middleware': 2349,
