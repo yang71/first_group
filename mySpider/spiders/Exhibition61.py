@@ -12,6 +12,12 @@ from ..items import *
 from ..str_filter import *
 from ..auxiliary_files import Exhibition61_supporting
 
+chrome_options = Options()
+chrome_options.add_argument("--headless")
+chrome_options.add_argument('--ignore-certificate-errors')
+chrome_options.add_argument("--disable-gpu")
+chrome_options.add_argument('log-level=0')
+
 class Exhibition61(scrapy.Spider):
     name = "Exhibition61"
     allowed_domains = ['czmuseum.com']
@@ -22,10 +28,16 @@ class Exhibition61(scrapy.Spider):
             'mySpider.pipelines.ExhibitionPipeLine': 302,
         },
         'DOWNLOADER_MIDDLEWARES': {
-            'mySpider.middlewares.Exhibition11Middleware': 65540,
+            'mySpider.middlewares.Exhibition61Middleware': 4540,
         },
     }
 
+    def __init__(self):
+        self.browser = webdriver.Chrome(chrome_options=chrome_options)
+        super().__init__()
+
+    def close(self, spider, reason):
+        self.browser.quit()
 
     def parse(self, response, **kwargs):
             item = ExhibitionItem()
@@ -38,3 +50,5 @@ class Exhibition61(scrapy.Spider):
             item["exhibitionIntroduction"] = StrFilter.filter(
                 response.xpath("//*[@id='app']/div/div[2]/div[2]/div[2]/div[2]/div[6]/div/div[2]/div[4]").xpath('string(.)').extract_first())
             item['exhibitionTime'] = "常设展览"
+            print(item)
+            yield item

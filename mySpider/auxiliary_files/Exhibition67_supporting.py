@@ -7,3 +7,6 @@
 
 class Exhibition67Supporting:
     startUrl = ['http://www.csmuseum.cn/#/ExDetail/4?id=507']
+             #   ,'http://www.csmuseum.cn/#/ExDetail/4?id=502'
+             #   ,'http://www.csmuseum.cn/#/ExDetail/4?id=498'
+             #   ,'http://www.csmuseum.cn/#/ExDetail/4?id=232']
