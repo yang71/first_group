@@ -16,7 +16,9 @@ from ..str_filter import *
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
+chrome_options.add_argument('--ignore-certificate-errors')
 chrome_options.add_argument("--disable-gpu")
+chrome_options.add_argument('log-level=3')
 
 
 class Collection0(scrapy.Spider):
