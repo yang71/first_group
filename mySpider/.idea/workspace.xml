@@ -4,14 +4,8 @@
     <list default="true" id="3ace0c23-e549-4577-a0a7-97a0e6a51e3f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/pipelines.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spiders/Museum104.py" beforeDir="false" afterPath="$PROJECT_DIR$/spiders/Museum104.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spiders/Museum161.py" beforeDir="false" afterPath="$PROJECT_DIR$/spiders/Museum161.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spiders/Museum24.py" beforeDir="false" afterPath="$PROJECT_DIR$/spiders/Museum24.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql_tools/update_collection.py" beforeDir="false" afterPath="$PROJECT_DIR$/sql_tools/update_collection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql_tools/update_exhibition.py" beforeDir="false" afterPath="$PROJECT_DIR$/sql_tools/update_exhibition.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql_tools/update_museum.py" beforeDir="false" afterPath="$PROJECT_DIR$/sql_tools/update_museum.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spiders/Museum38.py" beforeDir="false" afterPath="$PROJECT_DIR$/spiders/Museum38.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
